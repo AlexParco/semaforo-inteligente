@@ -4,7 +4,6 @@
 }
  
 body {
-  margin: 0px;
   font-family: sans-serif;
 
 }
@@ -12,6 +11,7 @@ body {
 * {
   background-color: var(--bg-color);
   color: var(--text-color);
+  margin: 0px;
 }
 
 .semaforo {
@@ -52,17 +52,19 @@ body {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
   gap: 2rem;
-  flex-direction: column;
 }
 
 .cont-resp{
-  width: 50%;
+  width: 80%;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .form {
@@ -123,10 +125,10 @@ input{
   .container {
     display: flex;
     flex-wrap: nowrap;
-    padding: 40px;
+    padding: 76px;
   }
 
   .cont-resp{
-    padding-top: 220px;
+    margin-top: 0px;
   }
 }
