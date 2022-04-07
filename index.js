@@ -22,6 +22,7 @@ SemaforoAnimation()
 const $ = (n) => document.getElementById(n)
 
 
+$('resp').hidden = true
 $('form').addEventListener('submit', (e) => {
   e.preventDefault()
   
@@ -34,18 +35,24 @@ $('form').addEventListener('submit', (e) => {
   let y = (parseInt(norte) + parseInt(sur)) * 3
   let x =  (parseInt(este) + parseInt(oeste)) * 3
 
-
   if(y >= x) {
+    $('resp').hidden = false
     $('resp').innerHTML = `
     <p>
-   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${y}</strong> segundos luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${x}</strong> segundos
+   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${y}</strong> segundos 
     </p>
+    <p>
+  luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${x}</strong> segundos
+    </p
     `
   } else{
     $('resp').innerHTML = `
     <p>
-   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${y}</strong> segundos
+   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos 
     </p>
+    <p>
+  luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${y}</strong> segundos
+    </p
     `
   }
 }) 
