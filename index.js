@@ -46,6 +46,7 @@ $('form').addEventListener('submit', (e) => {
     </p
     `
   } else{
+    $('resp').hidden = false
     $('resp').innerHTML = `
     <p>
    primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos 
@@ -58,14 +59,15 @@ $('form').addEventListener('submit', (e) => {
 }) 
 
 $('theme').addEventListener('click', () => {
+
   if (document.body.style.getPropertyValue('--bg-color') === '#101010'){
     $('theme').innerHTML = 'light'
     document.body.style.setProperty('--bg-color', '#f9f9f9');
     document.body.style.setProperty('--text-color', '#101010');
+
   }else {
     $('theme').innerHTML = 'dark'
     document.body.style.setProperty('--bg-color', '#101010');
     document.body.style.setProperty('--text-color', '#f9f9f9');
   }
 })
-

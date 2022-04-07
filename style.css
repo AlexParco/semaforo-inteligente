@@ -96,6 +96,7 @@ input{
   height: 40px;
   border-radius: 12px;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .theme{
