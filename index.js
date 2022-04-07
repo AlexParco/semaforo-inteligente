@@ -36,13 +36,13 @@ $('form').addEventListener('submit', (e) => {
 
 
   if(y >= x) {
-    $('resp').innerHTML += `
+    $('resp').innerHTML = `
     <p>
    primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${y}</strong> segundos luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${x}</strong> segundos
     </p>
     `
   } else{
-    $('resp').innerHTML += `
+    $('resp').innerHTML = `
     <p>
    primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${y}</strong> segundos
     </p>
