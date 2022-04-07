@@ -21,8 +21,8 @@ SemaforoAnimation()
 
 const $ = (n) => document.getElementById(n)
 
-
 $('resp').hidden = true
+
 $('form').addEventListener('submit', (e) => {
   e.preventDefault()
   
@@ -57,8 +57,6 @@ $('form').addEventListener('submit', (e) => {
   }
 }) 
 
-//  change theme
-
 $('theme').addEventListener('click', () => {
   if (document.body.style.getPropertyValue('--bg-color') === '#101010'){
     $('theme').innerHTML = 'light'
@@ -70,6 +68,4 @@ $('theme').addEventListener('click', () => {
     document.body.style.setProperty('--text-color', '#f9f9f9');
   }
 })
-
-
 
