@@ -7,9 +7,8 @@ const sleep = (ms) => {
 const SemaforoAnimation = async () => {
   let colores = ['c-red', 'c-yellow', 'c-green']
 
-  for (let i=0; i < colores.length; i++){
-    semaforo.children[i].classList.add(colores[i]) 
-
+  for (let i = 0; i < colores.length; i++) {
+    semaforo.children[i].classList.add(colores[i])
     await sleep(800)
 
     semaforo.children[i].classList.remove(colores[i])
@@ -25,7 +24,7 @@ $('resp').hidden = true
 
 $('form').addEventListener('submit', (e) => {
   e.preventDefault()
-  
+
   let norte = $('sur').value;
   let sur = $('norte').value;
 
@@ -33,39 +32,39 @@ $('form').addEventListener('submit', (e) => {
   let este = $('este').value;
 
   let y = (parseInt(norte) + parseInt(sur)) * 3
-  let x =  (parseInt(este) + parseInt(oeste)) * 3
+  let x = (parseInt(este) + parseInt(oeste)) * 3
 
-  if(y >= x) {
+  if (y >= x) {
     $('resp').hidden = false
     $('resp').innerHTML = `
     <p>
-   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${y}</strong> segundos 
+   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${y}</strong> segundos
     </p>
     <p>
   luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${x}</strong> segundos
     </p
     `
-  } else{
+  } else {
     $('resp').hidden = false
     $('resp').innerHTML = `
     <p>
-   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos 
+   primero se ponen en verde los semáforos de los carriles norte y sur con un tiempo de: <strong>${x}</strong> segundos
     </p>
     <p>
   luego se ponen en verde los semáforos de los carriles este y oeste con un tiempo de: <strong>${y}</strong> segundos
     </p
     `
   }
-}) 
+})
 
 $('theme').addEventListener('click', () => {
 
-  if (document.body.style.getPropertyValue('--bg-color') === '#101010'){
+  if (document.body.style.getPropertyValue('--bg-color') === '#101010') {
     $('theme').innerHTML = 'light'
     document.body.style.setProperty('--bg-color', '#f9f9f9');
     document.body.style.setProperty('--text-color', '#101010');
 
-  }else {
+  } else {
     $('theme').innerHTML = 'dark'
     document.body.style.setProperty('--bg-color', '#101010');
     document.body.style.setProperty('--text-color', '#f9f9f9');
